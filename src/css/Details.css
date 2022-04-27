@@ -1,0 +1,44 @@
+.background {
+    background-color: rgb(25, 24, 24);
+
+}
+
+.flexx{
+    margin: 0px 0px 0px 0px;
+}
+
+#gambar-detail {
+    width : 50vh;
+    border-style: solid;
+    border-color: #fff;
+    border-radius: 5px;
+    margin-right: 20px;
+    margin-top: 70px;
+    margin-left: 30px;
+}
+
+#penjelasan{
+    margin-top: 100px;
+    margin-left: 50px;
+    
+}
+
+
+a,hr, h1, h2, h3, h4, h5, h6, i, p {
+    color: #fff!important;
+    display: block;
+    text-shadow: 0 2px 3px #000;
+    line-height: 1em;
+}
+
+.overview{
+    margin-left: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-top: 30px;
+    height: 200px;
+}
+
+.danger {
+    margin-left: 50px;
+}
