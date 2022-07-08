@@ -11,20 +11,29 @@ import Favorites from "./pages/Favorites.jsx";
 function App() {
   const [isLoading, setisLoading] = useState(true);
   const [posts, setPosts] = useState([]);
+  const [page, setPage] = useState(1);
 
   useEffect(() => {
     axios
       .get(
-        "https://api.themoviedb.org/3/movie/now_playing?api_key=b2f0ee9217d829b7deaa3ba29a6f813c&language=en-US&page=1"
+        `https://api.themoviedb.org/3/movie/now_playing?api_key=b2f0ee9217d829b7deaa3ba29a6f813c&language=en-US&page=${page}`
       )
       .then((data) => {
-        setPosts(data.data.results);
+        const results = data.data.results;
+        setPosts(posts.concat(results));
       })
 
       .finally(() => {
         setisLoading(false);
       });
-  }, []);
+  }, [page]);
+
+  window.onscroll = function (e) {
+    if (window.innerHeight + window.scrollY >= document.body.scrollHeight) {
+      // you're at the bottom of the page
+      setPage(page + 1);
+    }
+  };
 
   return (
     <BrowserRouter>
